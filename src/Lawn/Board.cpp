@@ -1622,7 +1622,7 @@ bool Board::ChooseSeedsOnCurrentLevel()
 	if (mApp->IsIZombieLevel() || mApp->IsSlotMachineLevel())
 		return false;
 
-	return (!mApp->IsFirstTimeAdventureMode() || mLevel > 7);
+	return true;
 }
 
 void Board::StartLevel()
@@ -8617,8 +8617,7 @@ int Board::GetNumSeedsInBank()
 	}
 
 	int aNumSeeds = mApp->mPlayerInfo->mPurchases[StoreItem::STORE_ITEM_PACKET_UPGRADE] + 6;
-	int aSeedsAvailable = mApp->GetSeedsAvailable();
-	return std::min(aNumSeeds, aSeedsAvailable);
+	return aNumSeeds;
 }
 
 bool Board::StageIsNight()
