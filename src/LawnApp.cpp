@@ -2256,14 +2256,7 @@ SeedType LawnApp::GetAwardSeedForLevel(int theLevel)
 
 int LawnApp::GetSeedsAvailable()
 {
-	int aLevel = mPlayerInfo->GetLevel();
-	if (HasFinishedAdventure() || aLevel > 50)
-	{
-		return 49;
-	}
-
-	SeedType aSeedTypeMax = GetAwardSeedForLevel(aLevel);
-	return std::min(NUM_SEEDS_IN_CHOOSER, aSeedTypeMax);
+	return 49;
 }
 
 bool LawnApp::HasSeedType(SeedType theSeedType)
